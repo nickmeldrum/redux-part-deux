@@ -1,0 +1,47 @@
+{
+  "name": "react-talk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot",
+    "test": "node ./node_modules/karma/bin/karma start --single-run",
+    "watch-tests": "node ./node_modules/karma/bin/karma start",
+    "e2e-tests": "node nightwatch.js --env chrome",
+    "e2e-tests-all-browsers": "node nightwatch.js --env chrome,firefox,ie"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "chai": "^3.5.0",
+    "chromedriver": "^2.21.2",
+    "iedriver": "^2.53.1",
+    "karma": "^0.13.22",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-chai": "^0.1.0",
+    "karma-growl-reporter": "^1.0.0",
+    "karma-mocha": "^1.0.1",
+    "karma-mocha-reporter": "^2.0.4",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.5.3",
+    "nightwatch": "^0.9.4",
+    "phantomjs-prebuilt": "^2.1.7",
+    "react-addons-test-utils": "^15.1.0",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0"
+  }
+}
