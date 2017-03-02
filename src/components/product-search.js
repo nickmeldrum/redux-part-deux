@@ -5,9 +5,7 @@ const ProductSearch = ({getProducts}) => {
     getProducts(e.target.value)
   }
 
-  return (
-    <input type="text" onChange={textChanged} />
-  )
+  return <input type="text" onChange={textChanged} />
 }
 
 export default ProductSearch
