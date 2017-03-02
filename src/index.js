@@ -1,24 +1,20 @@
-'use strict';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import thunkMiddleware from 'redux-thunk'
+import { createStore, compose, combineReducers, applyMiddleware } from 'redux'
+import product from './reducers/product.js'
+import Products from './containers/products.js'
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import thunkMiddleware from 'redux-thunk';
-import { createStore, compose, combineReducers, applyMiddleware } from 'redux';
-import document from './reducers/document.js';
-import parts from './reducers/parts.js';
+const app = combineReducers({product})
 
-import Document from './containers/document.js';
-
-const app = combineReducers({document, parts});
-
-let store = createStore(app, {parts: []}, compose(
-    applyMiddleware(thunkMiddleware),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
+let store = createStore(app, {}, compose(
+  applyMiddleware(thunkMiddleware),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
 ))
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Document />
-    </Provider>
-, window.document.getElementById('app'));
+  <Provider store={store}>
+    <Products />
+  </Provider>
+  , window.document.getElementById('app'))
